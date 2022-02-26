@@ -20,6 +20,7 @@ const Panel: React.FC<ProcessProps> = (props) => {
 
   const toggleOnOffButtons = () => {
     setButtonOn(!buttonOn)
+    console.debug("hello")
   }
 
   return (
