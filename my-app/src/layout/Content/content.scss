@@ -1,0 +1,12 @@
+.content {
+  grid-area: content;
+  background-color: #d3d3d3;
+  height: 90vh;
+  justify-content: center;
+  align-items: center;
+  display: flex-end;
+
+  .MuiGrid-item {
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  }
+}

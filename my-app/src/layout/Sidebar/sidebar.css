@@ -1,0 +1,6 @@
+.sidebar {
+  grid-area: sidebar;
+  background-color: #13232c;
+  height: 90vh;
+  box-shadow: 10;
+}
