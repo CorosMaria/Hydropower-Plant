@@ -3,14 +3,17 @@ import Canvas from '../Canvas/canvas'
 import './dam.scss'
 
 export type DamProps = {
-  waterLevel: { x: number; y: number }
+  waterLevel: number
 }
 
 const Dam: React.FC<DamProps> = (props) => {
   const drawDam = (context: CanvasRenderingContext2D) => {
     //rezervor
     context.fillStyle = 'blue'
-    context.fillRect(props.waterLevel.x, props.waterLevel.y, 100, 150)
+
+    context.setTransform(1, 0, 0, -1, 0, 200)     // reverses the coordinate system's y-axis
+    context.fillRect(0, 0, 100, props.waterLevel);  // fill bottom to top
+    context.setTransform(1, 0, 0, 1, 0, 0); 
     context.save()
 
     //perete baraj

@@ -1,7 +1,6 @@
 import React from 'react'
 import './image.scss'
 import Label from '../../components/Label/label'
-import { flexbox } from '@mui/system'
 
 export type ImageProps = {
   image: string
