@@ -11,17 +11,18 @@ const Pipe: React.FC<PipeProps> = (props) => {
     //orizonal
     context.fillStyle = 'blue'
     context.fillRect(0, 246, 50, 21)
+    context.fillRect(50, 246, 50, 10) //liniuta aia mica din colt de teava
 
      //vertical
-     context.fillStyle = 'blue'
      context.fillRect(50, 246, 20, 90)
   }
 
   const drawPipe2 = (context: CanvasRenderingContext2D) => {
-   
+
     //vertical
    context.fillStyle = 'blue'
    context.fillRect(49, 0, 10, 40)
+   
 
     //orizonal
     context.fillStyle = 'blue'
@@ -51,14 +52,14 @@ const Pipe: React.FC<PipeProps> = (props) => {
             <Valve handleOnOff={handleValveOpenClose1} on={open1} className={"valve1"}/> 
             <Canvas
             draw={drawPipe1}
-            width={'70px'}
+            width={'100px'}
             height={'336px'}
             />
         </div>
             <Valve handleOnOff={handleValveOpenClose2} on={open2} className={"valve2"}/>
             <Canvas
             draw={drawPipe2}
-            width={'70px'}
+            width={'73px'}
             height={'100px'}
             />
         </div>

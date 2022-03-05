@@ -18,7 +18,7 @@
 .label {
   color: white;
   padding: 8px;
-  width: max-content;
+  max-width: 75px;
   text-align: center;
   font-family: 'myFont';
   font-size: large;

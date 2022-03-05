@@ -1,7 +1,7 @@
 import './label.css'
 
 export type LabelProps = {
-  value?: string
+  value?: number
   unit?: string
   className?: string
 }

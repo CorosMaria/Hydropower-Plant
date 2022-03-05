@@ -7,17 +7,13 @@ export type ButtonOnOffProps = {
 }
 
 const OnOffButtons: React.FC<ButtonOnOffProps> = (props) => {
-  // const [on, setOn] = React.useState(props.on)
-
-  // const handleOnOff = () => {
-  //   setOn(!on)
-  // }
 
   let content = (
     <div
       style={{
         display: 'flex',
         flexDirection: 'row',
+        marginTop: "600px"
       }}
     >
       <Image
@@ -41,6 +37,7 @@ const OnOffButtons: React.FC<ButtonOnOffProps> = (props) => {
         style={{
           display: 'flex',
           flexDirection: 'row',
+          marginTop: "600px"
         }}
       >
         <Image

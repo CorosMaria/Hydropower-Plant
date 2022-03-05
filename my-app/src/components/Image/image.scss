@@ -6,8 +6,6 @@
 .process-images {
   margin: 5px 0;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .generator {
@@ -26,8 +24,8 @@
 }
 
 .turbine {
-  width: 200px;
-  height: 100px;
+  width: 75px;
+  height: 150px;
 }
 
 .container {
@@ -41,7 +39,8 @@
 }
 
 .component-name{
-  font-size: larger;
+  font-size: medium;
   color: rgb(0, 0, 0);
+  width: 5px;
 }
 

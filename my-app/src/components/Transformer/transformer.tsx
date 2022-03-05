@@ -14,6 +14,8 @@ const Transformer: React.FC<TransformerProps> = (props) => {
       className="process-images transformer"
       hasStateIndicator
       hasLabel
+      value={20}
+      unit="MW"
       showComponentName
       componentName={"Transformer"}
     />

@@ -12,6 +12,8 @@ export type ImageProps = {
   hasLabel?: boolean
   showComponentName?: boolean
   componentName?: string
+  value?: number
+  unit?: string
 }
 
 const Image: React.FC<ImageProps> = (props) => {
@@ -45,7 +47,7 @@ const Image: React.FC<ImageProps> = (props) => {
   }
 
   const renderLabel = () => {
-    return <Label value="20" unit="MWh" className="label info" />
+    return <Label value={props.value} unit={props.unit} className="label info" />
   }
 
   const renderName = () => {

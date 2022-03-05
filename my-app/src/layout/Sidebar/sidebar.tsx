@@ -9,10 +9,10 @@ const SideBar: React.FC = () => (
         <ParametersTable title="Group 1" />
       </Grid>
       <Grid item xs={12}>
-        <ParametersTable title="Group 2" />
+
       </Grid>
       <Grid item xs={12}>
-        <ParametersTable title="Group 3" />
+ 
       </Grid>
     </Grid>
   </div>

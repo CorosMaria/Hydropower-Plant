@@ -13,13 +13,10 @@ const Header: React.FC = () => (
       <Grid item xs={2}>
         <DateTime />
       </Grid>
-      <Grid item xs={2}>
-        <Title title="Hydro Power Plant Control" />
+      <Grid item xs={7}>
+        <Title title="Supervision and control system for a Micro Hydropower Plant" />
       </Grid>
-      <Grid item xs={2}></Grid>
-      <Grid item xs={2}></Grid>
-      <Grid item xs={2}></Grid>
-      <Grid item xs={2}>
+      <Grid item xs={3}>
         <BasicButton
           startIcon={<LoginIcon />}
           onClick={() => alert('Button Clicked!')}

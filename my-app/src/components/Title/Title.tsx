@@ -9,7 +9,8 @@ const Title: React.FC<TitleProps> = (props) => {
         color: 'white',
         textAlign: 'center',
         fontFamily: 'myFont',
-        fontSize: 'large',
+        fontSize: 'larger',
+        letterSpacing: '2px'
       }}
     >
       <h2>{props.title}</h2>

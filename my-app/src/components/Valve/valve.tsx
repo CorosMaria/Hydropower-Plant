@@ -1,5 +1,4 @@
 import React from 'react'
-import Image from '../Image/image'
 import "./valve.scss"
 
 export type ValveProps = {

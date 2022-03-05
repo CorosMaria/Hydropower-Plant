@@ -34,11 +34,11 @@ export type DataTableProps = {
             }
         }
       
-        xhr.open("get", "http://davos.science.upm.ro/~traian/web_apl/simul_date/S1200.php", true )
-        //xhr.open("get", "http://davos.science.upm.ro/~traian/web_apl/multiio/act_val.php", true)
+        //xhr.open("get", "http://davos.science.upm.ro/~traian/web_apl/simul_date/S1200.php", true )
+        xhr.open("get", "http://davos.science.upm.ro/~traian/web_apl/multiio/act_val.php", true)
         xhr.send();
 
-        setTimeout(loadData, 200)
+        setTimeout(loadData, 2000)
       }
 
     return (

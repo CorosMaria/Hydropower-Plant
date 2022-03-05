@@ -7,13 +7,6 @@ import DataTable from '../../components/DataTable/dataTable'
 const Content: React.FC = () => (
   <div className="content">
     <Grid container direction="row">
-      <Grid item xs={6}>
-        <Label value="20" unit="bar" className="label success" />
-      </Grid>
-      <Grid item xs={6}>
-        Content
-      </Grid>
-
       <Grid item xs={12}>
         <Panel />
       </Grid>
@@ -21,7 +14,7 @@ const Content: React.FC = () => (
         Content
       </Grid>
       <Grid item xs={6}>
-        <DataTable />
+      Content
       </Grid>
       <Grid item xs={3}>Content</Grid>
     </Grid>
