@@ -1,4 +1,6 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
+import { MainState } from '../../models/models'
 import "./valve.scss"
 
 export type ValveProps = {
@@ -8,6 +10,8 @@ export type ValveProps = {
 }
 
 const Valve: React.FC<ValveProps> = (props) => {
+  const systemOn = useSelector((s: MainState) => s.systemOn)
+  
     let content = (
           <img
             src="valveClose.png"
@@ -17,7 +21,7 @@ const Valve: React.FC<ValveProps> = (props) => {
           />
       )
     
-      if (props.on) {
+      if (systemOn && props.on) {
         content = (
             <img
               src="valveOpen.png"

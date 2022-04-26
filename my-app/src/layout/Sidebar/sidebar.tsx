@@ -6,13 +6,13 @@ const SideBar: React.FC = () => (
   <div className="sidebar">
     <Grid container direction="column">
       <Grid item xs={12}>
-        <ParametersTable title="Group 1" />
+        <ParametersTable />
       </Grid>
       <Grid item xs={12}>
 
       </Grid>
       <Grid item xs={12}>
- 
+
       </Grid>
     </Grid>
   </div>

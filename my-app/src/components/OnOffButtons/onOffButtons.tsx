@@ -1,60 +1,81 @@
 import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import Image from '../../components/Image/image'
+import { MainState } from '../../models/models'
+import { Actions } from '../../redux/reducer'
 
 export type ButtonOnOffProps = {
-  on: boolean
-  handleOnOff(): void
 }
 
-const OnOffButtons: React.FC<ButtonOnOffProps> = (props) => {
+type Props = ButtonOnOffProps & {
+
+}
+
+const OnOffButtons: React.FC<Props> = (props) => {
+  const systemOn = useSelector((s: MainState) => s.systemOn)
+  const dispatch = useDispatch()
+
+  const handleTurnOn = () => {
+    dispatch(Actions.turnOn())
+  }
+
+  const handleTurnOff = () => {
+    dispatch(Actions.turnOff())
+  }
 
   let content = (
     <div
       style={{
         display: 'flex',
         flexDirection: 'row',
-        marginTop: "600px"
+        marginTop: "50px",
+        marginLeft: "20px"
       }}
     >
       <Image
         image="buttonON-off.png"
         altText="on"
         className="onOffButtons"
-        onClick={props.handleOnOff}
+        onClick={handleTurnOn}
       />
       <Image
         image="buttonOFF-on.png"
         altText="off"
         className="onOffButtons"
-        onClick={props.handleOnOff}
+        onClick={handleTurnOff}
       />
+      Off
     </div>
   )
 
-  if (props.on) {
+  if (systemOn) {
     content = (
       <div
         style={{
           display: 'flex',
           flexDirection: 'row',
-          marginTop: "600px"
+          marginTop: "50px",
+          marginLeft: "20px"
         }}
       >
         <Image
           image="buttonON-on.png"
           altText="on"
           className="onOffButtons"
-          onClick={props.handleOnOff}
+          onClick={handleTurnOn}
         />
         <Image
           image="buttonOFF-off.png"
           altText="off"
           className="onOffButtons"
-          onClick={props.handleOnOff}
+          onClick={handleTurnOff}
         />
+        On
       </div>
     )
   }
-  return <div>{content}</div>
+  
+  return content
 }
+
 export default OnOffButtons

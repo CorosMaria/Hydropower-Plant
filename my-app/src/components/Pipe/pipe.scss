@@ -1,0 +1,97 @@
+.waterArrow {
+    position: absolute;
+    width: 1%;
+    height: 2%;
+  }
+  
+.arrow3 {
+    margin-left: 70px;
+    margin-top: 246px;
+    animation: animate_right3 3s linear infinite;
+  }
+
+  @keyframes animate_right3 {
+    0% {
+        margin-left: 60px;
+    }
+
+    100% {
+        margin-left: 90px;
+    }
+}
+
+  .arrow4 {
+      transform: rotate(90deg);
+      margin-left: 100px;
+      margin-top: 290px;
+      animation: animate_down4 3s linear infinite;
+  }
+
+  @keyframes animate_down4 {
+    0% {
+        margin-top: 270px;
+    }
+
+    100% {
+        margin-top: 310px;
+    }
+}
+
+  .arrow5 {
+    margin-left: 140px;
+    margin-top: 246px;
+    height: 1%;
+    width: 0.5%;
+    animation: animate_right5 3s linear infinite;
+  }
+
+  @keyframes animate_right5 {
+    0% {
+        margin-left: 120px;
+    }
+
+    100% {
+        margin-left: 160px;
+    }
+}
+
+  .arrow6 {
+    transform: rotate(90deg);
+    margin-left: 101px;
+    margin-top: 420px;
+    animation: animate_down6 3s linear infinite;
+  }
+
+  @keyframes animate_down6 {
+    0% {
+        margin-top: 400px;
+    }
+
+    100% {
+        margin-top: 440px;
+    }
+}
+
+  .arrow7 { 
+    margin-left: 120px;
+    margin-top: 469px;
+    animation: animate_right7 3s linear infinite;
+  }
+
+  @keyframes animate_right7 {
+    0% {
+        margin-left: 110px;
+    }
+
+    100% {
+        margin-left: 130px;
+    }
+}
+
+  .spin { 
+    margin-left: 230px;
+    margin-top: 435px;
+    position: absolute;
+    width: 35px;
+    height: 80px
+  }

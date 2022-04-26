@@ -1,6 +1,8 @@
 import React from 'react'
 import './image.scss'
 import Label from '../../components/Label/label'
+import { useSelector } from 'react-redux'
+import { MainState } from '../../models/models'
 
 export type ImageProps = {
   image: string
@@ -14,17 +16,23 @@ export type ImageProps = {
   componentName?: string
   value?: number
   unit?: string
+  onCenter?: boolean
 }
 
-const Image: React.FC<ImageProps> = (props) => {
+type Props = ImageProps & {
+
+}
+
+const Image: React.FC<Props> = (props) => {
   const [running, setRunning] = React.useState(true)
+  const systemOn = useSelector((s: MainState) => s.systemOn)
 
   const handleToggleRunningMode = () => {
     setRunning(!running)
   }
 
   const renderStateIndicator = () => {
-    switch (running) {
+    switch (running && systemOn) {
       case true:
         return (
           <img
@@ -51,12 +59,11 @@ const Image: React.FC<ImageProps> = (props) => {
   }
 
   const renderName = () => {
-    return <div className="component-name"> {props.componentName} </div>
+    return <div style={props.onCenter ? { marginLeft: "auto", marginRight: "auto" } : {}} className="component-name"> {props.componentName} </div>
   }
 
   return (
-    <div className="container">
-      {props.hasLabel && renderLabel()}
+    <div>
       {props.hasStateIndicator && renderStateIndicator()}
       <img
         src={props.image}
@@ -64,6 +71,7 @@ const Image: React.FC<ImageProps> = (props) => {
         className={props.className}
         onClick={props.onClick}
       />
+      {props.hasLabel && renderLabel()}
       {props.showComponentName && renderName()}
     </div>
   )

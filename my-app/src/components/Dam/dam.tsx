@@ -1,19 +1,29 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
+import { MainState } from '../../models/models'
 import Canvas from '../Canvas/canvas'
+import OnOffButtons from '../OnOffButtons/onOffButtons'
 import './dam.scss'
 
-export type DamProps = {
-  waterLevel: number
+type DamProps = {
 }
 
-const Dam: React.FC<DamProps> = (props) => {
+type Props = DamProps & {
+
+}
+
+const Dam: React.FC<Props> = (props) => {
+  const systemOn = useSelector((s: MainState) => s.systemOn)
+  const valves = useSelector((s: MainState) => s.valves)
+  const waterLevel = 20 // poate lua valori intre 20-200 (inaltimea apei din rezervor)
+
   const drawDam = (context: CanvasRenderingContext2D) => {
     //rezervor
     context.fillStyle = 'blue'
 
     context.setTransform(1, 0, 0, -1, 0, 200)     // reverses the coordinate system's y-axis
-    context.fillRect(0, 0, 100, props.waterLevel);  // fill bottom to top
-    context.setTransform(1, 0, 0, 1, 0, 0); 
+    context.fillRect(0, 0, 100, waterLevel);  // fill bottom to top
+    context.setTransform(1, 0, 0, 1, 0, 0);
     context.save()
 
     //perete baraj
@@ -45,6 +55,9 @@ const Dam: React.FC<DamProps> = (props) => {
         height={'300px'}
         style={{ margin: '1%' }}
       />
+      <img src='arrow.png' className='waterArrow arrow1' style={{ visibility: systemOn && valves.valve1On ? "visible" : "hidden" }} />
+      <img src='arrow.png' className='waterArrow arrow2' style={{ visibility: systemOn && valves.valve1On ? "visible" : "hidden" }} />
+      <OnOffButtons />
     </div>
   )
 }

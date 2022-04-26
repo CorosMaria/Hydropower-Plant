@@ -1,3 +1,41 @@
 .dam {
   background-color: aqua;
 }
+
+.waterArrow {
+  position: absolute;
+  width: 1%;
+  height: 2%;
+}
+
+.arrow1 {
+  margin-top: -63px;
+  margin-left: 215px;
+  animation: animate_right1 3s linear infinite;
+}
+
+@keyframes animate_right1 {
+  0% {
+    margin-left: 180px;
+  }
+
+  100% {
+    margin-left: 220px;
+  }
+}
+
+.arrow2 {
+  margin-top: -63px;
+  margin-left: 260px;
+  animation: animate_right2 3s linear infinite;
+}
+
+@keyframes animate_right2 {
+  0% {
+      margin-left: 230px;
+  }
+
+  100% {
+      margin-left: 280px;
+  }
+}

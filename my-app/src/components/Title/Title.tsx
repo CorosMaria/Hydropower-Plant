@@ -4,17 +4,14 @@ export type TitleProps = {
 
 const Title: React.FC<TitleProps> = (props) => {
   return (
-    <div
-      style={{
+      <h2 style={{
         color: 'white',
-        textAlign: 'center',
         fontFamily: 'myFont',
-        fontSize: 'larger',
-        letterSpacing: '2px'
-      }}
-    >
-      <h2>{props.title}</h2>
-    </div>
+        fontSize: '35px',
+        letterSpacing: '2px',
+      }}>
+        {props.title}
+      </h2>
   )
 }
 

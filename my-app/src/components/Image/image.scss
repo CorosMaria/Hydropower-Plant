@@ -13,29 +13,18 @@
   height: 100px;
 }
 
-.stalp {
-  width: 50px;
-  height: 200px;
-}
-
-.transformer {
-  width: 100px;
-  height: 200px;
-}
-
 .turbine {
   width: 75px;
   height: 150px;
+  margin-top: 50px
 }
 
-.container {
-  .mode-Images {
-    width: 30px;
-    height: 30px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
+.mode-Images {
+  width: 30px;
+  height: 30px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .component-name{
@@ -43,4 +32,3 @@
   color: rgb(0, 0, 0);
   width: 5px;
 }
-

@@ -1,4 +1,7 @@
 import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { MainState } from '../../models/models'
+import { Actions } from '../../redux/reducer'
 import Canvas from '../Canvas/canvas'
 import Image from '../Image/image'
 import Valve from '../Valve/valve'
@@ -6,6 +9,8 @@ import Valve from '../Valve/valve'
 export type TurbineProps = {}
 
 const Turbine: React.FC<TurbineProps> = (props) => {
+  const valves = useSelector((s: MainState) => s.valves)
+  const dispatch = useDispatch()
   
   const drawPipe1 = (context: CanvasRenderingContext2D) => {
    
@@ -13,11 +18,9 @@ const Turbine: React.FC<TurbineProps> = (props) => {
     context.fillStyle = 'blue'
     context.fillRect(0, 246, 25, 10)
   }
-
-  const [open, setOpen] = React.useState(true)
   
-  const handleValveOpenClose = () => {
-    setOpen(!open)
+  const handleOpenCloseValve3 = () => {
+    dispatch(Actions.turnOnOff_Valve3(!valves.valve3On))
   }
 
   return (
@@ -27,7 +30,7 @@ const Turbine: React.FC<TurbineProps> = (props) => {
             width={'20px'}
             height={'360px'}
             />
-      <Valve handleOnOff={handleValveOpenClose} on={open} className={"valve3"}/>
+      <Valve handleOnOff={handleOpenCloseValve3} on={valves.valve3On} className={"valve3"}/>
       <Canvas
             draw={drawPipe1}
             width={'25px'}
@@ -42,7 +45,7 @@ const Turbine: React.FC<TurbineProps> = (props) => {
           value={200}
           unit={"rot/min"}
           showComponentName
-          componentName={"Water turbine"}
+          componentName={"Turbina"}
         />
       </div>
       

@@ -1,0 +1,77 @@
+.arrow8 {
+    margin-top: 246px;
+    height: 1%;
+    width: 0.5%;
+    position: absolute;
+    animation: animate_right8 5s linear infinite;
+  }
+
+  .arrow9 {
+    margin-left: 80px;
+    margin-top: 246px;
+    height: 1%;
+    width: 0.5%;
+    position: absolute;
+    animation: animate_right9 5s linear infinite;
+  }
+
+  @keyframes animate_right8 {
+    0% {
+        margin-left: 0px;
+    }
+
+    100% {
+        margin-left: 40px;
+    }
+}
+
+@keyframes animate_right9 {
+    0% {
+        margin-left: 80px;
+    }
+
+    100% {
+        margin-left: 130px;
+    }
+}
+
+  .arrow10 {
+    margin-left: 40px;
+    margin-top: 300px;
+    height: 1%;
+    width: 0.5%;
+    position: absolute;
+    transform: rotate(90deg);
+    animation: animate_down 5s linear infinite;
+  }
+
+  .arrow11 {
+    margin-left: 130px;
+    margin-top: 300px;
+    height: 1%;
+    width: 0.5%;
+    position: absolute;
+    transform: rotate(90deg);
+    animation: animate_down 5s linear infinite;
+}
+
+@keyframes animate_down {
+    0% {
+        margin-top: 270px;
+    }
+
+    100% {
+        margin-top: 400px;
+    }
+}
+
+.oilLabel {
+    position: absolute;
+    margin-top: -150px;
+    margin-left: 200px;
+    color: white;
+    padding: 8px;
+    max-width: 75px;
+    text-align: center;
+    font-size: large;
+}
