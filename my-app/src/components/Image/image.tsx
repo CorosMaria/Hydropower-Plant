@@ -17,6 +17,7 @@ export type ImageProps = {
   value?: number
   unit?: string
   onCenter?: boolean
+  onTop?: boolean
 }
 
 type Props = ImageProps & {
@@ -65,14 +66,16 @@ const Image: React.FC<Props> = (props) => {
   return (
     <div>
       {props.hasStateIndicator && renderStateIndicator()}
+      {props.onTop && props.hasLabel && renderLabel()}
+      {props.onTop && props.showComponentName && renderName()}
       <img
         src={props.image}
         alt={props.altText}
         className={props.className}
         onClick={props.onClick}
       />
-      {props.hasLabel && renderLabel()}
-      {props.showComponentName && renderName()}
+      {!props.onTop && props.hasLabel && renderLabel()}
+      {!props.onTop && props.showComponentName && renderName()}
     </div>
   )
 }

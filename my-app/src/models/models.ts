@@ -17,6 +17,39 @@ export type objectData = {
   Sample_nr: number
 }
 
+export type buttonsState = {
+  B0: number
+  B1: number
+  B2: number
+  B3: number
+  B4: number
+  B5: number
+  B6: number
+  B7: number
+  B8: number
+  B9: number
+  B10: number
+  B11: number
+  B12: number
+  B13: number
+  B14: number
+  B15: number
+}
+
+export type lagarState = {
+  lagar1: boolean,
+  lagar2: boolean
+}
+
+export type history = {
+  id: number
+  date: string
+  time: string
+  type: string
+  component: string
+  text: string
+}
+
 export type MainState = {
   systemOn: boolean
   plc_data: objectData
@@ -24,6 +57,10 @@ export type MainState = {
   valves: {
     valve1On: boolean
     valve2On: boolean
-    valve3On: boolean
-  }
+  },
+  history: history[]
+  buttons: buttonsState
+  operatingMode: boolean
+  lagare: lagarState
+  ventilation: boolean
 }

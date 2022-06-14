@@ -1,6 +1,4 @@
 .App {
-  width: 100vw;
-  height: 100vh;
   background-color: #d3d3d3;
 }
 
@@ -14,7 +12,6 @@
 .content {
   grid-area: content;
   background-color: #d3d3d3;
-  height: 95vh;
   justify-content: center;
   align-items: center;
   display: flex-end;

@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import { decToBinary } from '../../helpers/helpers'
 import { MainState } from '../../models/models'
 import './table.scss'
 
@@ -30,8 +31,8 @@ const ParametersTable: React.FC<Props> = (props) => {
   const outputData = [
     createData('AO0', data.AO0),
     createData('AO1', data.AO1),
-    createData('AO1', data.AO2),
-    createData('AO1', data.AO3),
+    createData('AO2', data.AO2),
+    createData('AO3', data.AO3),
   ]
 
   const PlcData = [
@@ -44,43 +45,43 @@ const ParametersTable: React.FC<Props> = (props) => {
   return (
     <div>
       <table className='dataTable'>
-        <tr>
-          <th>Input</th>
-        </tr>
-        <br />
-        {inputData.map((input) => (
-          <tr key={input.name}>
-            <th>{input.name}</th>
-            <th>{input.value}</th>
+        <tbody>
+          <tr>
+            <th>Input</th>
           </tr>
-        ))}
-        <tr>
-          <br />
-        </tr>
-        <tr>
-          <th>Output</th>
-        </tr>
-        <br />
-        {outputData.map((output) => (
-          <tr key={output.name}>
-            <th>{output.name}</th>
-            <th>{output.value}</th>
+          {inputData.map((input) => (
+            <tr key={input.name}>
+              <th>{input.name}</th>
+              <th>{input.value}</th>
+            </tr>
+          ))}
+          <tr>
           </tr>
-        ))}
-        <tr>
-          <br />
-        </tr>
-        <tr>
-          <th>PLC</th>
-        </tr>
-        <br />
-        {PlcData.map((plcParameter) => (
-          <tr key={plcParameter.name}>
-            <th>{plcParameter.name}</th>
-            <th>{plcParameter.value}</th>
+          <tr>
+            <th>Output</th>
           </tr>
-        ))}
+          {outputData.map((output) => (
+            <tr key={output.name}>
+              <th>{output.name}</th>
+              <th>{output.value}</th>
+            </tr>
+          ))}
+          <tr>
+          </tr>
+          <tr>
+            <th>PLC</th>
+          </tr>
+          {PlcData.map((plcParameter) => (
+            <tr key={plcParameter.name}>
+              <th>{plcParameter.name}</th>
+              <th>{plcParameter.value}</th>
+            </tr>
+          ))}
+        </tbody>
       </table>
+      <div>
+
+      </div>
     </div>
   )
 }

@@ -5,24 +5,24 @@
   }
   
 .arrow3 {
-    margin-left: 70px;
+    margin-left: 40px;
     margin-top: 246px;
     animation: animate_right3 3s linear infinite;
   }
 
   @keyframes animate_right3 {
     0% {
-        margin-left: 60px;
+        margin-left: 30px;
     }
 
     100% {
-        margin-left: 90px;
+        margin-left: 60px;
     }
 }
 
   .arrow4 {
       transform: rotate(90deg);
-      margin-left: 100px;
+      margin-left: 50px;
       margin-top: 290px;
       animation: animate_down4 3s linear infinite;
   }
@@ -38,7 +38,7 @@
 }
 
   .arrow5 {
-    margin-left: 140px;
+    margin-left: 60px;
     margin-top: 246px;
     height: 1%;
     width: 0.5%;
@@ -47,18 +47,20 @@
 
   @keyframes animate_right5 {
     0% {
-        margin-left: 120px;
+        margin-left: 60px;
     }
 
     100% {
-        margin-left: 160px;
+        margin-left: 100px;
     }
 }
 
   .arrow6 {
     transform: rotate(90deg);
-    margin-left: 101px;
+    margin-left: 55px;
     margin-top: 420px;
+    height: 1%;
+    width: 0.5%;
     animation: animate_down6 3s linear infinite;
   }
 
@@ -73,23 +75,25 @@
 }
 
   .arrow7 { 
-    margin-left: 120px;
-    margin-top: 469px;
+    margin-left: 60px;
+    margin-top: 440px;
+    height: 1%;
+    width: 0.5%;
     animation: animate_right7 3s linear infinite;
   }
 
   @keyframes animate_right7 {
     0% {
-        margin-left: 110px;
+        margin-left: 50px;
     }
 
     100% {
-        margin-left: 130px;
+        margin-left: 90px;
     }
 }
 
   .spin { 
-    margin-left: 230px;
+    margin-left: 180px;
     margin-top: 435px;
     position: absolute;
     width: 35px;

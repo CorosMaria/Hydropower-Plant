@@ -68,10 +68,35 @@
 .oilLabel {
     position: absolute;
     margin-top: -150px;
-    margin-left: 200px;
+    margin-left: 220px;
     color: white;
     padding: 8px;
     max-width: 75px;
     text-align: center;
     font-size: large;
 }
+
+.spinner1{
+    animation: rotation 2s infinite linear;
+    width: 25px;
+    position: absolute;
+    margin-top: 465px;
+    margin-left: -150px;
+}
+
+.spinner2 {
+    animation: rotation 2s infinite linear;
+    width: 25px;
+    position: absolute;
+    margin-top: 465px;
+    margin-left: -60px;
+}
+
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }

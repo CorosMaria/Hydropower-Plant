@@ -16,20 +16,26 @@ type Props = OilSystemProps & {
 const OilSystem: React.FC<Props> = (props) => {
   const systemOn = useSelector((s: MainState) => s.systemOn)
   const valves = useSelector((s: MainState) => s.valves)
+  const lagare = useSelector((s: MainState) => s.lagare)
 
   const oilLevel = 100 //minim 10, la 140 e plin rezervorul
-  let oilInPipes = 215 //minim 0, max 215
+  const oilInPipes = 215
 
-  const drawDam = (context: CanvasRenderingContext2D) => {
+  let oilPressure = 3 //minim 0, max 10
+
+  const drawOilSystem = (context: CanvasRenderingContext2D, width: number, height: number) => {
+
+    context.clearRect(0, 0, width, height)
+    context.save()
 
     //rezervor
     context.fillStyle = 'gray'
-    context.fillRect(20, 590, 160, 170)
+    context.fillRect(40, 590, 160, 170)
 
     //oil
     context.fillStyle = 'orange'
     context.setTransform(1, 0, 0, -1, 0, 160)     // reverses the coordinate system's y-axis
-    context.fillRect(30, -580, 140, oilLevel);  // fill reservoir bottom to top
+    context.fillRect(50, -580, 140, oilLevel);  // fill reservoir bottom to top
     context.setTransform(1, 0, 0, 1, 0, 0);
     context.save()
 
@@ -43,23 +49,23 @@ const OilSystem: React.FC<Props> = (props) => {
 
     //tevi de ulei
     context.fillStyle = 'gray'
-    context.fillRect(40, 510, 15, 230)
-    context.strokeRect(40, 510, 15, 230)
+    context.fillRect(70, 510, 15, 230)
+    context.strokeRect(70, 510, 15, 230)
     context.save()
 
-    context.fillRect(130, 510, 15, 230)
-    context.strokeRect(130, 510, 15, 230)
+    context.fillRect(160, 510, 15, 230)
+    context.strokeRect(160, 510, 15, 230)
     context.save()
 
     //uleiul din tevi
     context.fillStyle = 'orange'
     context.setTransform(1, 0, 0, -1, 0, 230)     // reverses the coordinate system's y-axis
-    context.fillRect(45, -500, 5, oilInPipes);  // fill pipes from bottom to top 
+    context.fillRect(75, -500, 5, oilInPipes);  // fill pipes from bottom to top 
     context.setTransform(1, 0, 0, 1, 0, 0);
     context.save()
 
     context.setTransform(1, 0, 0, -1, 0, 230)     // reverses the coordinate system's y-axis
-    context.fillRect(135, -500, 5, oilInPipes);  // fill pipes from bottom to top
+    context.fillRect(165, -500, 5, oilInPipes);  // fill pipes from bottom to top
     context.setTransform(1, 0, 0, 1, 0, 0);
     context.save()
 
@@ -79,22 +85,39 @@ const OilSystem: React.FC<Props> = (props) => {
     context.fillRect(130, 505, 40, 5)
     context.save()
 
-    if (systemOn && oilInPipes == 215) {
-      // teava ulei primul lagar
-      context.fillStyle = 'orange'
-      context.fillRect(45, 455, 35, 3)
-      context.fillRect(45, 455, 3, 50)
-      context.fillRect(77, 455, 3, 50)
-      context.fillRect(45, 502, 35, 3)
-      context.save()
+    //teava conectoare primul si al doilea lagar pentru evacuarea apei
+    context.fillStyle = 'blue'
+    context.fillRect(80, 490, 55, 5)
+    context.fillRect(40, 505, 5, 40)
+    context.fillRect(0, 545, 45, 5)
+    context.save()
 
-      //teava ulei al doilea lagar 
-      context.fillStyle = 'orange'
-      context.fillRect(135, 455, 35, 3)
-      context.fillRect(135, 455, 3, 50)
-      context.fillRect(167, 455, 3, 50)
-      context.fillRect(135, 502, 35, 3)
+    if (!valves.valve2On) {
+      context.clearRect(40, 510, 5, 40)
+      context.clearRect(0, 545, 45, 5)
       context.save()
+    }
+
+    if (systemOn) {
+      if (lagare.lagar1) {
+        // teava ulei primul lagar
+        context.fillStyle = 'orange'
+        context.fillRect(45, 455, 35, 3)
+        context.fillRect(45, 455, 3, 50)
+        context.fillRect(77, 455, 3, 50)
+        context.fillRect(45, 502, 35, 3)
+        context.save()
+      }
+
+      if (lagare.lagar2) {
+        //teava ulei al doilea lagar 
+        context.fillStyle = 'orange'
+        context.fillRect(135, 455, 35, 3)
+        context.fillRect(135, 455, 3, 50)
+        context.fillRect(167, 455, 3, 50)
+        context.fillRect(135, 502, 35, 3)
+        context.save()
+      }
     }
 
     //teava 1 catre lagar
@@ -131,7 +154,11 @@ const OilSystem: React.FC<Props> = (props) => {
     context.save()
   }
 
-  const oilPressureIndicator = (context: CanvasRenderingContext2D) => {
+  const oilPressureIndicator = (context: CanvasRenderingContext2D, width: number, height: number) => {
+
+    context.clearRect(0, 0, width, height)
+    context.save()
+
     context.save();
     context.clearRect(0, 0, 150, 150);
     context.translate(30, 30);
@@ -157,7 +184,7 @@ const OilSystem: React.FC<Props> = (props) => {
     context.save();
     context.lineWidth = 5;
     for (i = 0; i < 50; i++) {
-      if (i % 5 != 0) {
+      if (i % 5 !== 0) {
         context.beginPath();
         context.moveTo(117, 0);
         context.lineTo(120, 0);
@@ -167,9 +194,7 @@ const OilSystem: React.FC<Props> = (props) => {
     }
     context.restore();
 
-    var oilPressure = 1
-
-    oilPressure = oilPressure >= 12 ? oilPressure - 12 : oilPressure;
+    oilPressure = oilPressure >= 12 ? oilPressure - 12 : oilPressure
 
     context.fillStyle = 'black';
 
@@ -193,22 +218,24 @@ const OilSystem: React.FC<Props> = (props) => {
 
   return (
     <div>
-      <img src='arrow.png' className='waterArrow arrow8' style={{ visibility: systemOn && valves.valve1On && valves.valve3On ? "visible" : "hidden" }} />
-      <img src='arrow.png' className='waterArrow arrow9' style={{ visibility: systemOn && valves.valve1On && valves.valve3On ? "visible" : "hidden" }} />
-      <img src='arrow.png' className='waterArrow arrow10' style={{ visibility: systemOn && valves.valve1On && valves.valve3On ? "visible" : "hidden" }} />
-      <img src='arrow.png' className='waterArrow arrow11' style={{ visibility: systemOn && valves.valve1On && valves.valve3On ? "visible" : "hidden" }} />
+      <img src='arrow.png' alt='arrow' className='waterArrow arrow8' style={{ visibility: systemOn && valves.valve2On ? "visible" : "hidden" }} />
+      <img src='arrow.png' alt='arrow' className='waterArrow arrow9' style={{ visibility: systemOn && valves.valve2On ? "visible" : "hidden" }} />
+      <img src='arrow.png' alt='arrow' className='waterArrow arrow10' style={{ visibility: systemOn && valves.valve2On ? "visible" : "hidden" }} />
+      <img src='arrow.png' alt='arrow' className='waterArrow arrow11' style={{ visibility: systemOn && valves.valve2On ? "visible" : "hidden" }} />
       <Canvas
-        draw={drawDam}
-        width={'200px'}
-        height={'750px'}
+        draw={drawOilSystem}
+        width={200}
+        height={750}
       />
+      <img src="spinner.png" alt='spinner' className='spinner1' style={{ visibility: systemOn && lagare.lagar1 ? "visible" : "hidden" }} />
+      <img src="spinner.png" alt='spinner' className='spinner2' style={{ visibility: systemOn && lagare.lagar2 ? "visible" : "hidden" }} />
       <Canvas
         draw={oilPressureIndicator}
-        width={'60px'}
-        height={'60px'}
-        style={{ position: "absolute", marginTop: "650px" }}
+        width={60}
+        height={60}
+        style={{ position: "absolute", marginTop: "650px", marginLeft: "10px" }}
       />
-      <Label value={10} unit="bar" className='info oilLabel' />
+      <Label value={oilPressure} unit="bar" className='info oilLabel' />
     </div>
   )
 }

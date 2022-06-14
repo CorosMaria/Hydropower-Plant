@@ -4,7 +4,7 @@ type CanvasProps = React.DetailedHTMLProps<
   React.CanvasHTMLAttributes<HTMLCanvasElement>,
   HTMLCanvasElement
 > & {
-  draw: (context: CanvasRenderingContext2D) => void
+  draw: (context: CanvasRenderingContext2D, height: number, width: number) => void
 }
 
 const Canvas: React.FC<CanvasProps> = ({ draw, ...props }) => {
@@ -17,7 +17,7 @@ const Canvas: React.FC<CanvasProps> = ({ draw, ...props }) => {
     const context = canvas.getContext('2d')
     if (!context) return
 
-    draw(context)
+    draw(context, +props.height!, +props.width!)
   })
 
   return (
