@@ -5,7 +5,7 @@ const DateTime: React.FC = () => {
   const { date, time, wish } = useDate()
 
   return (
-    <div style={{ color: 'white', fontSize: 'large' }}>
+    <div style={{ color: 'white', fontSize: 'large', padding: "0.3em" }}>
       <h3>{wish}</h3>
       <div>
         <h3>

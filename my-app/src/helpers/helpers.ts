@@ -60,8 +60,8 @@ export const findChange = (oldObject: any, newObject: any) => {
 }
 
 export function convertValue(value: number, min: number, max: number) {
-    const OldMin = 0
-    const OldMax = 1024
+    const OldMin = -1035
+    const OldMax = 1035
     const OldRange = (OldMax - OldMin)
 
     const NewMin = min

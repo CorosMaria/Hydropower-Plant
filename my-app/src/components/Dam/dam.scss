@@ -32,16 +32,22 @@
 
 @keyframes animate_right2 {
   0% {
-      margin-left: 230px;
+    margin-left: 230px;
   }
 
   100% {
-      margin-left: 280px;
+    margin-left: 280px;
   }
 }
 
-.deschidere{
+.deschidere {
   position: absolute;
   margin-top: 35px;
+  margin-left: 200px;
+}
+
+.nivel {
+  position: absolute;
+  margin-top: -200px;
   margin-left: 200px;
 }

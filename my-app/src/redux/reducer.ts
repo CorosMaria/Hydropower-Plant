@@ -102,7 +102,7 @@ export function reducer(state = { ...DEFAULT_STATE }, action: MainActionType): M
                             break
                         }
                         case "AI1": {
-                            text = "S-a modificat turatia turbinei din " + state.plc_data.AI1 + " in " + change.value
+                            text = "S-a modificat temperatura angrenajului din " + state.plc_data.AI1 + " in " + change.value
                             componenta = "Turbina"
                             break
                         }
