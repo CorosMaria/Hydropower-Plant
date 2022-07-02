@@ -14,7 +14,7 @@ const Header: React.FC = () => (
         <DateTime />
       </Grid>
       <Grid item xs={7}>
-        <Title title="Supervision and control system for a Micro Hydropower Plant" />
+        <Title title="Supervision and control system for a Hydropower Plant" />
       </Grid>
       <Grid item xs={3}>
         <BasicButton

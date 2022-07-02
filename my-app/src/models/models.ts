@@ -35,6 +35,25 @@ export type buttonsState = {
   B15: number
 }
 
+export type ledsState = {
+  C0: number,
+  C1: number,
+  C2: number,
+  C3: number,
+  C4: number,
+  C5: number,
+  C6: number,
+  C7: number,
+  C8: number,
+  C9: number,
+  C10: number,
+  C11: number,
+  C12: number,
+  C13: number,
+  C14: number,
+  C15: number
+}
+
 export type lagarState = {
   lagar1: boolean,
   lagar2: boolean
@@ -59,6 +78,7 @@ export type MainState = {
   },
   history: history[]
   buttons: buttonsState
+  leds: ledsState
   operatingMode: boolean
   lagare: lagarState
   ventilation: boolean
