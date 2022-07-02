@@ -38,8 +38,7 @@ const ParametersTable: React.FC<Props> = (props) => {
   const PlcData = [
     createData('Remote', data.Remote),
     createData('Digi', data.Digi),
-    createData('Com', data.Com),
-    createData('Sample_nr', data.Sample_nr)
+    createData('Com', data.Com)
   ]
 
   return (

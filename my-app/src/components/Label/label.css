@@ -1,26 +1,35 @@
 .success {
   background-color: #04aa6d;
-} /* Green */
+}
+
+/* Green */
 .info {
   background-color: #2196f3;
-} /* Blue */
+}
+
+/* Blue */
 .warning {
   background-color: #ff9800;
-} /* Orange */
+}
+
+/* Orange */
 .danger {
   background-color: #f44336;
-} /* Red */
+}
+
+/* Red */
 .other {
   background-color: #e7e7e7;
   color: black;
-} /* Gray */
+}
+
+/* Gray */
 
 .label {
   color: white;
   padding: 8px;
   max-width: 75px;
   text-align: center;
-  font-family: 'myFont';
   font-size: large;
   display: block;
   margin-left: auto;
@@ -28,3 +37,9 @@
   margin-bottom: 2%;
 }
 
+.AI3 {
+  margin-left: 399px;
+  position: absolute;
+  margin-top: 150px;
+  width: 61px;
+}

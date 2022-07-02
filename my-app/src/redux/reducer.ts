@@ -1,4 +1,4 @@
-import { findChange, decToBinary, isEqual } from "../helpers/helpers"
+import { findChange, decToBinary, isEqual, convertValue } from "../helpers/helpers"
 import { history, MainState, objectData } from "../models/models"
 
 export type MainActionType =
@@ -26,8 +26,7 @@ const DEFAULT_STATE: MainState = {
         AO0: 0,
         AO1: 0,
         AO2: 0,
-        AO3: 0,
-        Sample_nr: 1
+        AO3: 0
     },
     loading: false,
     valves: {
@@ -97,23 +96,23 @@ export function reducer(state = { ...DEFAULT_STATE }, action: MainActionType): M
                     let componenta = "Potentiometru neatribuit"
                     switch (change.key) {
                         case "AI0": {
-                            text = "S-a modificat nivelul apei din baraj din " + state.plc_data.AI0 + " in " + change.value
+                            text = "S-a modificat nivelul apei din baraj din " + convertValue(state.plc_data.AI0, 0, 100) + " in " + convertValue(change.value, 0, 100)
                             componenta = "Baraj"
                             break
                         }
                         case "AI1": {
-                            text = "S-a modificat temperatura angrenajului din " + state.plc_data.AI1 + " in " + change.value
-                            componenta = "Turbina"
-                            break
-                        }
-                        case "AI2": {
-                            text = "S-a modificat deschidere valvei 1 din " + state.plc_data.AI2 + " in " + change.value
+                            text = "S-a modificat deschidere valvei 1 din " + convertValue(state.plc_data.AI1, 0, 100) + " in " + convertValue(change.value, 0, 100)
                             componenta = "Valva"
                             break
                         }
+                        case "AI2": {
+                            text = "S-a modificat temperatura angrenajului din " + convertValue(state.plc_data.AI2, 0, 100) + " in " + convertValue(change.value, 0, 100)
+                            componenta = "Turbina-generator"
+                            break
+                        }
                         case "AI3": {
-                            text = "S-a modificat tensiunea de iesire a generatorului din " + state.plc_data.AI3 + " in " + change.value
-                            componenta = "Generator"
+                            text = "S-a modificat consumul energetic din " + convertValue(state.plc_data.AI3, 0, 100) + " in " + convertValue(change.value, 0, 100)
+                            componenta = "Consumator"
                             break
                         }
                     }

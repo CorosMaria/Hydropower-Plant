@@ -13,8 +13,7 @@ export type objectData = {
   AO0: number,
   AO1: number,
   AO2: number,
-  AO3: number,
-  Sample_nr: number
+  AO3: number
 }
 
 export type buttonsState = {

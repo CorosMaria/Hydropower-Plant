@@ -27,8 +27,7 @@ function mapData(data: any) {
         AO0: parseInt(dataArray[11], 10),
         AO1: parseInt(dataArray[12], 10),
         AO2: parseInt(dataArray[13], 10),
-        AO3: parseInt(dataArray[14], 10),
-        Sample_nr: parseInt(dataArray[15], 10)
+        AO3: parseInt(dataArray[14], 10)
     }
     return dataObject
 }

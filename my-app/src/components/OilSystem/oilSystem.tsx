@@ -21,7 +21,8 @@ const OilSystem: React.FC<Props> = (props) => {
   const oilLevel = 100 //minim 10, la 140 e plin rezervorul
   const oilInPipes = 215
 
-  let oilPressure = 3 //minim 0, max 10
+  const AI4 = useSelector((s: MainState) => s.plc_data.AI4)
+  let oilPressure = Math.round(AI4 / 100)
 
   const drawOilSystem = (context: CanvasRenderingContext2D, width: number, height: number) => {
 
@@ -142,15 +143,15 @@ const OilSystem: React.FC<Props> = (props) => {
     context.save()
 
     //Text LT1
-    context.font = "20px Comic Sans MS";
+    context.font = "15px Comic Sans MS";
     context.fillStyle = "black";
-    context.fillText("LT1", 60, 445)
+    context.fillText("Lagar 1", 60, 445)
     context.save()
 
     //Text LT2
-    context.font = "20px Comic Sans MS";
+    context.font = "15px Comic Sans MS";
     context.fillStyle = "black";
-    context.fillText("LT2", 155, 445)
+    context.fillText("Lagar 2", 145, 445)
     context.save()
   }
 

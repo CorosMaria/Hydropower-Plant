@@ -40,7 +40,7 @@ export const useDate = () => {
     }
 }
 
-export const findChange = (oldObject: any, newObject: any) => {
+export const findChange = (oldObject: objectData, newObject: any) => {
     const date = new Date()
     if (JSON.stringify(oldObject) !== JSON.stringify(newObject)) {
         let i, j, len, item
@@ -59,9 +59,9 @@ export const findChange = (oldObject: any, newObject: any) => {
     }
 }
 
-export function convertValue(value: number, min: number, max: number) {
-    const OldMin = -1035
-    const OldMax = 1035
+export function convertValue(value: number | any, min: number, max: number) {
+    const OldMin = -1024
+    const OldMax = 1024
     const OldRange = (OldMax - OldMin)
 
     const NewMin = min
@@ -74,7 +74,7 @@ export function convertValue(value: number, min: number, max: number) {
     return Math.round(NewValue)
 }
 
-export function decToBinary(n: number) {
+export function decToBinary(n: number): any {
     // array to store binary number
     let binaryNum: number[] = new Array(16)
 
