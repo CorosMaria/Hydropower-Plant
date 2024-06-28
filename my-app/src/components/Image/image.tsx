@@ -6,6 +6,8 @@ import { MainState } from '../../models/models'
 
 export type ImageProps = {
   image: string
+  componentClassName?: string
+  imageClassName?: string
   className?: string
   altText?: string
   onClick?: any
@@ -60,18 +62,19 @@ const Image: React.FC<Props> = (props) => {
   }
 
   const renderName = () => {
-    return <div style={props.onCenter ? { marginLeft: "auto", marginRight: "auto" } : {}} className="component-name"> {props.componentName} </div>
+    return <div className="component-name"> {props.componentName} </div>
   }
 
   return (
-    <div>
+    <div className={props.componentClassName} style={{ position: "relative" }}>
       {props.hasStateIndicator && renderStateIndicator()}
       {props.onTop && props.hasLabel && renderLabel()}
-      {props.onTop && props.showComponentName && renderName()}
+      {props.showComponentName && renderName()}
       <img
         src={props.image}
         alt={props.altText}
-        className={props.className}
+        className={props.imageClassName}
+        style={{ position: "absolute" }}
         onClick={props.onClick}
       />
       {!props.onTop && props.hasLabel && renderLabel()}

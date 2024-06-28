@@ -5,8 +5,6 @@ import Grid from '@material-ui/core/Grid'
 import Panel from './components/Panel/panel'
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { bindActionCreators } from 'redux'
-import { actionsCreators } from './redux'
 import LogTable from './components/LogTable/logTable'
 
 type Props = {
@@ -14,15 +12,6 @@ type Props = {
 
 const App: React.FC<Props> = (props) => {
   const dispatch = useDispatch()
-
-  const { loadData } = bindActionCreators(
-    actionsCreators,
-    dispatch
-  )
-
-  setInterval(() => {
-    loadData()
-  }, 2000)
 
   return (
     <div className="App">

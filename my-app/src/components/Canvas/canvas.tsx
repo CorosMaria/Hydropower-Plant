@@ -22,11 +22,11 @@ const Canvas: React.FC<CanvasProps> = ({ draw, ...props }) => {
 
   return (
     <canvas
-      width={props.width}
-      height={props.height}
+      width={1740}
+      height={760}
       ref={canvasRef}
       style={props.style}
-    ></canvas>
+    />
   )
 }
 

@@ -5,7 +5,7 @@ import Grid from '@material-ui/core/Grid'
 const SideBar: React.FC = () => (
   <div className="sidebar">
     <Grid container direction="column">
-      <ParametersTable />
+      {/* <ParametersTable /> */}
     </Grid>
   </div>
 )
