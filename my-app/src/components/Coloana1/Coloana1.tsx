@@ -81,7 +81,7 @@ const Coloana1: React.FC<Coloana1Props> = (props) => {
   };
 
   const drawPipe7 = (context: CanvasRenderingContext2D) => {
-    //coloana contactor => VB - APA
+    //coloana contactor => SchimbatorTrifazic - APA
     context.fillStyle = "#1918ad";
 
     //orizontala
@@ -120,17 +120,20 @@ const Coloana1: React.FC<Coloana1Props> = (props) => {
   };
 
   const drawPipe8 = (context: CanvasRenderingContext2D) => {
-    // VB => filtre - TEG MURDAR
+    // SchimbatorTrifazic => filtre - TEG MURDAR
     context.fillStyle = "#0c5714";
 
     //verticala
     context.fillRect(230, 350, 10, 330);
     //orizontala
-    context.fillRect(230, 400, 70, 10);
+    context.fillRect(230, 395, 70, 10);
+    context.fillRect(230, 410, 70, 10);
     //orizontala
-    context.fillRect(230, 450, 120, 10);
+    context.fillRect(230, 445, 120, 10);
+    context.fillRect(230, 460, 120, 10);
     //orizontala
-    context.fillRect(230, 520, 70, 10);
+    context.fillRect(230, 510, 70, 10);
+    context.fillRect(230, 525, 70, 10);
      //orizontala
      context.fillRect(230, 680, 700, 10);
       //orizontala
@@ -138,20 +141,20 @@ const Coloana1: React.FC<Coloana1Props> = (props) => {
      //verticala teg murdar spre filtru 1
     context.fillRect(930, 610, 10, 80);
     //filtru 1 - filtru 2
-     //orizontala intre filtre din dreapta jos
+     //orizontala intre separator de caldura din dreapta jos
      context.fillRect(1100, 600, 20, 10);
      //verticala teg murdar spre filtru 1
     context.fillRect(1110, 610, 10, 10);
-    //orizontala intre filtre din dreapta jos
+    //orizontala intre separator de caldura din dreapta jos
 
     //filtru 2 - filtru 3
-    //orizontala intre filtre din dreapta jos
+    //orizontala intre separator de caldura din dreapta jos
     context.fillRect(1200, 620, 40, 10);
-    //verticala teg murdar spre filtru 3
+    //verticala teg murdar spre separator de caldura 3
    context.fillRect(1110, 610, 10, 10);
-   //orizontala intre filtre din dreapta jos
+   //orizontala intre separator de caldura din dreapta jos
     context.fillRect(1110, 620, 40, 10);
-    //verticala teg murdar spre filtru 3
+    //verticala teg murdar spre separator de caldura 3
    context.fillRect(1235, 620, 10, 30);
     context.save();
   };
@@ -256,6 +259,19 @@ const Coloana1: React.FC<Coloana1Props> = (props) => {
 
   return (
     <div className="coloana1">
+    <div style={{position: "absolute", marginLeft: "1em", marginTop: "1em"}}>
+      Legenda
+      <ul>
+        <li className="legendItem"><div className="square" style={{background: "#e1a322"}}/>Gaz bogat (murdar)</li>
+        <li className="legendItem"><div className="square" style={{background: "#ffea00"}}/>Gaz sarac (curat)</li>
+        <li className="legendItem"><div className="square" style={{background: "#0c5714"}}/>TEG bogat (murdar)</li>
+        <li className="legendItem"><div className="square" style={{background: "#9fe855"}}/>TEG sarac (curat)</li>
+        <li className="legendItem"><div className="square" style={{background: "#a118b3"}}/>Chimicale</li>
+        <li className="legendItem"><div className="square" style={{background: "#1918ad"}}/>Apa </li>
+        <li className="legendItem"><div className="square" style={{background: "#ce1200"}}/>Caldura </li>
+        <li className="legendItem"><div className="square" style={{background: "#3f3e3f"}}/>Aer </li>
+      </ul>
+      </div>
       <Image
         image="Coloana contactor.png"
         altText="Coloana contactor"
@@ -274,16 +290,43 @@ const Coloana1: React.FC<Coloana1Props> = (props) => {
       <Canvas draw={drawPipe8} style={{ position: "absolute" }} />
       <Canvas draw={drawPipe9} style={{ position: "absolute" }} />
       <Canvas draw={drawPipe10} style={{ position: "absolute" }} />
+      {/* Gaz murdar intrare - portocaliu */}
       <img src="arrow.png" className="arrow" id="arrow1"/>
+      {/* Apa - Coloana contactor  iesire - albastru */}
+      <img src="arrowReverse.png" className="arrow" id="arrow2"/>
+      {/* Coloana contactor  schimbator de caldura - galben */}
+      <img src="arrowBlack.png" className="arrow" id="arrow3"/>
+      {/* coloana contactor - schimbator de caldura - verde deschis */}
+      <img src="arrowBlackLeft.png" className="arrow" id="arrow4"/>
+      {/* schimbator de caldura - pompe - verde deschis */}
+      <img src="arrowBlackUp.png" className="arrow" id="arrow6"/>
+      <img src="arrowBlackUp.png" className="arrow" id="arrow7"/>
+      {/* pompe - cooler - verde deschis */}
+      <img src="arrowBlackUp.png" className="arrow" id="arrow8"/>
+      <img src="arrowBlackUp.png" className="arrow" id="arrow9"/>
+      {/* pompe jos - cooler - verde deschis  */}
+      <img src="arrowBlackUp.png" className="arrow" id="arrow10"/>
+      {/* SchimbatorTrifazic - iesire  apa - albastru */}
+      <img src="arrowReverse.png" className="arrow" id="arrow12"/>
+      {/* coloana contactor - SchimbatorTrifazic - verde inchis */}
+      <img src="arrowDown.png" className="arrow" id="arrow13"/>
+      {/* SchimbatorTrifazic - filtre - verde inchis  */}
+      <img src="arrowDown.png" className="arrow" id="arrow14"/>
+      {/* Separator trifazic - apa de la refierbator - verticala stanga*/}
+      <img src="arrowUp.png" className="arrow" id="arrow15"/>
+       {/* Separator trifazic - apa de la refierbator - orizontala jos*/}
+       <img src="arrowReverse.png" className="arrow" id="arrow16"/>
+       {/* Filtre spre schimbator de caldura TEG - TEG */}
+       <img src="arrow.png" className="arrow" id="arrow17"/>
       <Image
-        image="Schimbator-de-caldura.png"
-        altText="Schimbator de caldura"
-        componentClassName="Schimbator-de-caldura-Component"
-        imageClassName="Schimbator-de-caldura-Image"
+        image="Separator-de-caldura.png"
+        altText="Separator de caldura"
+        componentClassName="Separator-de-caldura-Component"
+        imageClassName="Separator-de-caldura-Image"
         value={200}
         unit={"rot/min"}
         showComponentName
-        componentName={"Schimbator de caldura"}
+        componentName={"Separator de caldura"}
         onTop={true}
       />
       <Canvas draw={drawPipe3} style={{ position: "absolute" }} />
@@ -313,13 +356,13 @@ const Coloana1: React.FC<Coloana1Props> = (props) => {
       />
       <Image
         image="Separator-trifazic-VB.png"
-        altText="VB"
-        componentClassName="VB-Component"
-        imageClassName="VB-Image"
+        altText="Separator Trifazic"
+        componentClassName="SchimbatorTrifazic-Component"
+        imageClassName="SchimbatorTrifazic-Image"
         value={200}
         unit={"rot/min"}
         showComponentName
-        componentName={"VB"}
+        componentName={"Separator Trifazic"}
         onTop={true}
       />
       <Image

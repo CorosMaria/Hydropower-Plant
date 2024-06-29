@@ -7,6 +7,24 @@ export type Coloana2Props = {};
 const Coloana2: React.FC<Coloana2Props> = (props) => {
   return (
     <div className="coloana2">
+       {/* schimbator de caldura - iesire - galben */}
+       <img src="arrowBlack.png" className="arrow" id="arrow5"/>
+       {/* schimbator de caldura TEG -TEG - pompe jos - verde deschis  */}
+       <img src="arrowBlackLeft.png" className="arrow" id="arrow11"/>
+       {/* Schimbatoare de caldura TEG - TEG spre refierbator - verde inchis */}
+       <img src="arrow.png" className="arrow" id="arrow18"/>
+       {/* Teg - teg - refierbator veriticala verde inchis */}
+       <img src="arrowUp.png" className="arrow" id="arrow19"/>
+       {/* apa verticala - albastru spre refierbator */}
+       <img src="arrowDown.png" className="arrow" id="arrow20"/>
+       {/* Chimicale spre acumulator - mov  */}
+       <img src="arrowReverse.png" className="arrow" id="arrow21"/>
+       {/* apa - spre refierbator orizontala */}
+       <img src="arrow.png" className="arrow" id="arrow22"/>
+       {/* teg murdar spre refierbator orizontala */}
+       <img src="arrowReverse.png" className="arrow" id="arrow23"/>
+       {/* Acumulator - separator de caldura teg - teg - verde deschis */}
+       <img src="arrowBlackDown.png" className="arrow" id="arrow24"/>
       <Image
         image="Refierbator.png"
         altText="Refierbator"
@@ -48,6 +66,7 @@ const Coloana2: React.FC<Coloana2Props> = (props) => {
         componentName={"Ventilator"}
         onTop={true}
       />
+      <div style={{marginLeft: "330px", marginTop: "250px", position: "absolute"}}>Separator de caldura TEG-TEG</div>
        <Image
         image="Chimicale.jpg"
         altText="Chimicale"
@@ -67,9 +86,10 @@ const Coloana2: React.FC<Coloana2Props> = (props) => {
         value={200}
         unit={"rot/min"}
         showComponentName
-        componentName={"Filtru"}
+        componentName={"."}
         onTop={true}
       />
+      
       <Image
         image="SchimbatorCaldura.png"
         altText="Filtru"
@@ -78,7 +98,7 @@ const Coloana2: React.FC<Coloana2Props> = (props) => {
         value={200}
         unit={"rot/min"}
         showComponentName
-        componentName={"Filtru"}
+        componentName={"."}
         onTop={true}
       />
       <Image
@@ -89,7 +109,7 @@ const Coloana2: React.FC<Coloana2Props> = (props) => {
         value={200}
         unit={"rot/min"}
         showComponentName
-        componentName={"Filtru"}
+        componentName={"."}
         onTop={true}
       />
        <Image

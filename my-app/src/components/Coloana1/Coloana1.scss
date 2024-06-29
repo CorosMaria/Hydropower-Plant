@@ -1,101 +1,345 @@
 .ColoanaContactor-Component {
-    margin-left: 300px;
-    margin-top: 20px;
+  margin-left: 300px;
+  margin-top: 20px;
 }
 
 .ColoanaContactor-Image {
-    height: 250px;
+  height: 250px;
 }
 
-.Schimbator-de-caldura-Component {
-    margin-left: 500px;
-    margin-top: 20px
+.Separator-de-caldura-Component {
+  margin-left: 500px;
+  margin-top: 20px;
 }
 
-.Schimbator-de-caldura-Image {
-    height: 100px;
+.Separator-de-caldura-Image {
+  height: 100px;
 }
 
 .Pompa-Image {
-    height: 30px;
+  height: 30px;
 }
 
 .Pompa1-Component {
-    margin-left: 600px;
-    margin-top: 150px;
+  margin-left: 600px;
+  margin-top: 150px;
 }
 
 .Pompa2-Component {
-    margin-left: 700px;
+  margin-left: 700px;
 }
 
-.VB-Image {
-    height: 60px;
+.SchimbatorTrifazic-Image {
+  height: 60px;
 }
 
-.VB-Component {
-    margin-top: 50px;
-    margin-left: 150px;
+.SchimbatorTrifazic-Component {
+  margin-top: 45px;
+  margin-left: 150px;
 }
 
 .Cooler-Image {
-    height: 60px;
+  height: 60px;
 }
 
 .Cooler-Component {
-    margin-top: 10px;
-    margin-left: 500px;
+  margin-top: 10px;
+  margin-left: 500px;
 }
 
 .Filtru-Image {
-    height: 60px;
+  height: 60px;
 }
 
 .Filtru1-Component {
-    margin-top: 60px;
-    margin-left: 300px;
+  margin-top: 60px;
+  margin-left: 300px;
 }
 
 .Filtru2-Component {
-    margin-top: 30px;
-    margin-left: 350px;
+  margin-top: 30px;
+  margin-left: 350px;
 }
 
 .Filtru3-Component {
-    margin-top: 50px;
-    margin-left: 300px;
+  margin-top: 50px;
+  margin-left: 300px;
 }
 
 .Pompa3-Component {
-    margin-left: 600px;
-    margin-top: 50px;
+  margin-left: 600px;
+  margin-top: 50px;
 }
 
 .Pompa4-Component {
-    margin-left: 700px;
-    margin-bottom: 50px;
+  margin-left: 700px;
+  margin-bottom: 50px;
 }
 
 .PompaInvers-Image {
-    height: 30px;
-    transform: scaleX(-1);
+  height: 30px;
+  transform: scaleX(-1);
 }
 
 .Refierbator {
-    height: 100px;
+  height: 100px;
 }
 
 .Filtru {
-    height: 70px;
+  height: 70px;
+}
+
+.square {
+  width: 40px;
+  height: 10px;
+  margin-right: .5em
+}
+
+.legendItem {
+    display: flex;
+    align-items: center;
 }
 
 .arrow {
-    height: 1em;
-    position: absolute;
-    animation: animate_right1 3s linear infinite;
+  height: 1em;
+  position: absolute;
+  z-index: 1;
+}
+
+@keyframes animate_right1 {
+  0% {
+    margin-left: 60px;
+  }
+
+  100% {
+    margin-left: 220px;
+  }
 }
 
 #arrow1 {
-    margin-top: 194px;
-    margin-left: 60px;
+  margin-top: 194px;
+  margin-left: 60px;
+  animation: animate_right1 3s linear infinite;
+}
+
+#arrow2 {
+  margin-top: 247px;
+  margin-left: 80px;
+  animation: animate_left2 3s linear infinite;
+}
+
+@keyframes animate_left2 {
+  0% {
+    margin-left: 280px;
+  }
+
+  100% {
+    margin-left: 80px;
+  }
+}
+
+#arrow3 {
+  margin-top: 2px;
+  margin-left: 360px;
+  animation: animate_right3 3s linear infinite;
+}
+
+@keyframes animate_right3 {
+  0% {
+    margin-left: 360px;
+  }
+
+  100% {
+    margin-left: 450px;
+  }
+}
+
+#arrow4 {
+  margin-top: 107px;
+  margin-left: 430px;
+  animation: animate_right4 3s linear infinite;
+}
+
+@keyframes animate_right4 {
+  0% {
+    margin-left: 480px;
+  }
+
+  100% {
+    margin-left: 430px;
+  }
+}
+
+#arrow6 {
+  margin-top: 90px;
+  margin-left: 578px;
+  animation: animate_right6 3s linear infinite;
+}
+
+@keyframes animate_right6 {
+  0% {
+    margin-top: 200px;
+  }
+
+  100% {
+    margin-top: 90px;
+  }
+}
+
+#arrow7 {
+  margin-top: 90px;
+  margin-left: 688px;
+  animation: animate_right7 3s linear infinite;
+}
+
+@keyframes animate_right7 {
+  0% {
+    margin-top: 200px;
+  }
+
+  100% {
+    margin-top: 90px;
+  }
+}
+#arrow8 {
+  margin-left: 702px;
+  animation: animate_top8 3s linear infinite;
+}
+
+@keyframes animate_top8 {
+  0% {
+    margin-top: 360px;
+  }
+
+  100% {
+    margin-top: 250px;
+  }
+}
+
+#arrow9 {
+  margin-left: 602px;
+  animation: animate_top9 3s linear infinite;
+}
+
+@keyframes animate_top9 {
+  0% {
+    margin-top: 360px;
+  }
+
+  100% {
+    margin-top: 250px;
+  }
+}
+
+#arrow10 {
+  margin-left: 458px;
+  animation: animate_top10 3s linear infinite;
+}
+
+@keyframes animate_top10 {
+  0% {
+    margin-top: 570px;
+  }
+
+  100% {
+    margin-top: 400px;
+  }
+}
+
+#arrow12 {
+  margin-top: 357px;
+  margin-left: 30px;
+  animation: animate_left12 3s linear infinite;
+}
+
+@keyframes animate_left12 {
+  0% {
+    margin-left: 180px;
+  }
+
+  100% {
+    margin-left: 40px;
+  }
+}
+
+#arrow13 {
+  margin-top: 250px;
+  margin-left: 417px;
+  animation: animate_left13 3s linear infinite;
+}
+
+@keyframes animate_left13 {
+  0% {
+    margin-top: 200px;
+  }
+
+  100% {
+    margin-top: 280px;
+  }
+}
+
+#arrow14 {
+  margin-top: 250px;
+  margin-left: 227px;
+  animation: animate_left14 3s linear infinite;
+}
+
+@keyframes animate_left14 {
+  0% {
+    margin-top: 400px;
+  }
+
+  100% {
+    margin-top: 620px;
+  }
+}
+
+#arrow15 {
+  margin-top: 250px;
+  margin-left: 77px;
+  animation: animate_left15 3s linear infinite;
+}
+
+@keyframes animate_left15 {
+  0% {
+    margin-top: 650px;
+  }
+
+  100% {
+    margin-top: 400px;
+  }
+}
+
+#arrow16 {
+  margin-top: 697px;
+  margin-left: 77px;
+  animation: animate_left16 7s linear infinite;
+}
+
+@keyframes animate_left16 {
+  0% {
+    margin-left: 1400px;
+  }
+
+  100% {
+    margin-left: 100px;
+  }
+}
+
+
+#arrow17 {
+  margin-top: 677px;
+  margin-left: 77px;
+  animation: animate_left17 3s linear infinite;
+}
+
+@keyframes animate_left17 {
+  0% {
+    margin-left: 250px;
+  }
+
+  100% {
+    margin-left: 800px;
+    
+  }
 }
