@@ -406,7 +406,7 @@ const Coloana1: React.FC<Coloana1Props> = (props) => {
         value={200}
         unit={"rot/min"}
         showComponentName
-        componentName={"Filtru"}
+        componentName={"Filtru 3"}
         onTop={true}
       />
       <Image

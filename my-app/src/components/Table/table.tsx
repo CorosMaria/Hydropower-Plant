@@ -1,87 +1,103 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
-import { decToBinary } from '../../helpers/helpers'
-import { MainState } from '../../models/models'
-import './table.scss'
+import React from "react";
+import { useSelector } from "react-redux";
+import { decToBinary } from "../../helpers/helpers";
+import { MainState } from "../../models/models";
+import "./table.scss";
 
-export type TableProps = {
-}
+export type TableProps = {};
 
-type Props = TableProps & {
-}
+type Props = TableProps & {};
 
-function createData(name: string, value?: number) {
-  return { name, value }
+function createData(name: string, value?: number | string, unit?: string) {
+  return { name, value, unit };
 }
 
 const ParametersTable: React.FC<Props> = (props) => {
-  const data = useSelector((s: MainState) => s.plc_data)
-
-  const inputData = [
-    createData('AI0', data.AI0),
-    createData('AI1', data.AI1),
-    createData('AI2', data.AI2),
-    createData('AI3', data.AI3),
-    createData('AI4', data.AI4),
-    createData('AI5', data.AI5),
-    createData('AI6', data.AI6),
-    createData('AI7', data.AI7),
-  ]
-
-  const outputData = [
-    createData('AO0', data.AO0),
-    createData('AO1', data.AO1),
-    createData('AO2', data.AO2),
-    createData('AO3', data.AO3),
-  ]
-
-  const PlcData = [
-    createData('Remote', data.Remote),
-    createData('Digi', data.Digi),
-    createData('Com', data.Com)
-  ]
+  // const data = useSelector((s: MainState) => s.plc_data)
+  const PunctDeRoua = [createData("Max", -15, "°C"), createData("Curent", "-20", "°C")];
+  const IntrareGazMurdar = [createData("Ideal", 15, "°C"), createData("Curent", "15", "°C")];
+  const TegCurat = [createData("Max", 10, "°C"), createData("Curent", 5, "°C")];
+  const Cooler = [createData("Gaz", 15, "°C"), createData("TEG", "20", "°C"), createData("Cooler", "OFF")];
+  const Refierbator = [createData("Max", 204, "°C"), createData("Curent", "197", "°C")];
+  const CameraDeArdere = [createData("T", 350, "°C"), createData("Vent", "ON")];
 
   return (
     <div>
-      <table className='dataTable'>
+      <div className="titleCategory">Punct de roua</div>
+      <table className="dataTable">
         <tbody>
-          <tr>
-            <th>Input</th>
-          </tr>
-          {inputData.map((input) => (
+          {PunctDeRoua.map((input) => (
             <tr key={input.name}>
               <th>{input.name}</th>
               <th>{input.value}</th>
-            </tr>
-          ))}
-          <tr>
-          </tr>
-          <tr>
-            <th>Output</th>
-          </tr>
-          {outputData.map((output) => (
-            <tr key={output.name}>
-              <th>{output.name}</th>
-              <th>{output.value}</th>
-            </tr>
-          ))}
-          <tr>
-          </tr>
-          <tr>
-            <th>PLC</th>
-          </tr>
-          {PlcData.map((plcParameter) => (
-            <tr key={plcParameter.name}>
-              <th>{plcParameter.name}</th>
-              <th>{plcParameter.value}</th>
+              <th>{input.unit}</th>
             </tr>
           ))}
         </tbody>
       </table>
-      <div>
-
-      </div>
+      <div className="titleCategory">Coloana contactor</div>
+      <div className="titleTable">Intrare gaz murdar</div>
+      <table className="dataTable">
+        <tbody>
+          {IntrareGazMurdar.map((input) => (
+            <tr key={input.name}>
+              <th>{input.name}</th>
+              <th>{input.value}</th>
+              <th>{input.unit}</th>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <div className="titleTable">Intrare TEG curat</div>
+      <table className="dataTable">
+        <tbody>
+          {TegCurat.map((input) => (
+            <tr key={input.name}>
+              <th>{input.name}</th>
+              <th>{input.value}</th>
+              <th>{input.unit}</th>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <div className="titleCategory">Cooler</div>
+      <table className="dataTable">
+        <tbody>
+          {Cooler.map((input) => (
+            <tr key={input.name}>
+              <th>{input.name}</th>
+              <th>{input.value}</th>
+              <th>{input.unit}</th>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <div className="titleCategory">Refierbator</div>
+      <table className="dataTable">
+        <tbody>
+          {Refierbator.map((input) => (
+            <tr key={input.name}>
+              <th>{input.name}</th>
+              <th>{input.value}</th>
+              <th>{input.unit}</th>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <div className="titleTable">Camera de ardere</div>
+      <table className="dataTable">
+        <tbody>
+          {CameraDeArdere.map((input) => (
+            <tr key={input.name}>
+              <th>{input.name}</th>
+              <th>{input.value}</th>
+              <th>{input.unit}</th>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      
     </div>
-  )
-}
-export default ParametersTable
+  );
+};
+export default ParametersTable;

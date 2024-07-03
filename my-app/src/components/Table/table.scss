@@ -1,4 +1,4 @@
-.dataTable {
+.dataTable, .titleTable, .titleCategory {
 
   th,
   td {
@@ -7,7 +7,6 @@
     background-color: black;
     color: greenyellow;
   }
-
   width: 95%;
   border-collapse: collapse;
   margin: 5px;
@@ -16,4 +15,20 @@
   font-family: 'Courier New',
   monospace;
   background-color: black;
+}
+
+.titleTable {
+  border: 1px solid black;
+  font-size: large;
+  background-color: black;
+  color: rgb(47, 255, 248);
+  text-align: center;
+}
+
+.titleCategory {
+  border: 1px solid black;
+  font-size: large;
+  background-color: black;
+  color: rgb(255, 47, 245);
+  text-align: center;
 }
